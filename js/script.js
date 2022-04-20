@@ -9,17 +9,12 @@ let q8 = document.querySelector('#q8')
 let q9 = document.querySelector('#q9')
 let q10 = document.querySelector('#q10')
 let resultado = document.querySelector('#resultado')
+
 let botao = document.querySelector('#verificar')
 botao.addEventListener('click', setVerificar)
 
 function setVerificar() {
     
-    if (name.value == '') {
-        console.log(name);
-        
-        alert('Preencha o nome!')
-        resultado.innerHTML  = ""
-    } else {
         let pontos = 0
         if (q1.value == '1') {
             pontos += 10
@@ -60,10 +55,17 @@ function setVerificar() {
         if (q10.value == '1') {
             pontos += 10
         }
+    
+    const name = document.querySelector ("#name")
+    let value = name.value;
 
-        resultado.innerHTML = ("<h3>resultado</h3><br>" + pontos)
-
-    }
+    
+    if (value == ""){
+    alert('Por favor, coloque seu nome!')
+    return 0 }
+    console.log(value);
+    resultado.innerHTML = ("<h1>Resultado</h1> <br> Pontos: " + pontos)
+    names.innerHTML = "<br> Nome: " + value
 
 
 }
